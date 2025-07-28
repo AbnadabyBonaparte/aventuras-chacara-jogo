@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Sarah from './characters/Sarah';
 import AnaMaria from './characters/AnaMaria';
+import PetManager from './PetManager';
+import AbilitySystem from './AbilitySystem';
 import { useKeyPress } from '../hooks/useKeyPress';
 import { useMobile } from '../hooks/use-mobile';
 
 const CharacterManager = () => {
   const [activeCharacter, setActiveCharacter] = useState('sarah');
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [position, setPosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const [health, setHealth] = useState(100);
   const [energy, setEnergy] = useState(100);
   const [experience, setExperience] = useState({ level: 1, points: 0, percent: 0 });
@@ -23,7 +25,6 @@ const CharacterManager = () => {
   
   // Gerenciar movimento do personagem
   const handleMove = (newPosition) => {
-    // Aqui você pode adicionar lógica de colisão ou limites
     setPosition(newPosition);
   };
   
@@ -33,9 +34,6 @@ const CharacterManager = () => {
     
     // Reduzir energia ao usar habilidades
     setEnergy(prev => Math.max(0, prev - 10));
-    
-    // Implementar efeito da habilidade
-    // ...
     
     // Ganhar experiência ao usar habilidades
     addExperience(5);
@@ -82,6 +80,15 @@ const CharacterManager = () => {
           onUseAbility={handleUseAbility}
         />
       )}
+      
+      {/* Sistema de pets */}
+      <PetManager playerPosition={position} />
+      
+      {/* Sistema de habilidades */}
+      <AbilitySystem 
+        character={activeCharacter}
+        onUseAbility={handleUseAbility}
+      />
       
       {/* Interface do usuário */}
       <div className="character-ui">
