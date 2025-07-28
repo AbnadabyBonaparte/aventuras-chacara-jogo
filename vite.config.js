@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +15,8 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
-    strictPort: true
+    strictPort: true,
+    allowedHosts: ['healthcheck.railway.app'], // Adicionado para permitir o healthcheck do Railway
   },
   build: {
     outDir: 'dist',
@@ -30,4 +31,4 @@ export default defineConfig({
       }
     }
   }
-})
+});
