@@ -1,3 +1,5 @@
+/* Adicione esses estilos ao seu App.css existente */
+
 /* Estilos gerais */
 :root {
   --color-sarah-primary: #E91E63; /* Rosa vibrante */
@@ -8,95 +10,11 @@
   --color-experience: #00C851; /* Verde esmeralda */
 }
 
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: 'Nunito', sans-serif;
-}
-
-.aventuras-chacara-app {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Tela inicial */
-.start-screen {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #00C851 0%, #007BFF 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-
-.start-screen h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.start-screen h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.start-button {
-  background: linear-gradient(135deg, #FF6B35 0%, #E91E63 100%);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.start-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-.settings-button {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.settings-button:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.game-info {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* Tela de jogo */
+/* Tela do jogo */
 .game-screen {
   width: 100%;
   height: 100%;
   position: relative;
-}
-
-.game-area {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #4CAF50; /* Temporário */
 }
 
 /* Personagens */
@@ -144,15 +62,13 @@ body, html {
 }
 
 /* Interface de usuário do jogo */
-.game-ui {
+.character-ui {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+  justify-content: center;
 }
 
 /* Barra de status */
@@ -232,21 +148,6 @@ body, html {
   border-radius: 3px;
 }
 
-.ability-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  font-size: 8px;
-  padding: 2px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .cooldown-overlay {
   position: absolute;
   bottom: 0;
@@ -257,14 +158,11 @@ body, html {
   transition: height 0.1s;
 }
 
-/* Controles pets */
+/* Pet controles */
 .pet-controls {
   position: absolute;
   top: 10px;
   right: 10px;
-}
-
-.pet-icons {
   display: flex;
   gap: 5px;
 }
@@ -282,83 +180,5 @@ body, html {
 }
 
 .pet-icon.active {
-  border-color: #FFD700;
-}
-
-.pet-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Controles mobile */
-.mobile-controls {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.virtual-joystick {
-  width: 150px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  position: relative;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.mobile-pet-buttons {
-  display: flex;
-  gap: 5px;
-}
-
-.mobile-pet-buttons button {
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: 5px;
-  color: white;
-}
-
-.mobile-pet-buttons button.active {
-  background-color: rgba(255, 215, 0, 0.5);
-}
-
-.character-switch-button {
-  margin-top: 10px;
-  padding: 5px 15px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: 15px;
-  color: white;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .start-screen h1 {
-    font-size: 2rem;
-  }
-  
-  .start-screen h2 {
-    font-size: 1.2rem;
-  }
-  
-  .start-button {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-  
-  .character-status {
-    width: 150px;
-  }
-  
-  .ability-icon {
-    width: 40px;
-    height: 40px;
-  }
+  border-color: var(--color-energy);
 }
