@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import CharacterManager from '../components/CharacterManager';
-import { useMobile } from '../hooks/use-mobile';
+import CharacterManager from './components/CharacterManager';
+import { useMobile } from './hooks/use-mobile';
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
